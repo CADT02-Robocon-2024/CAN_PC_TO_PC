@@ -13,7 +13,7 @@ def send_data(mid, data):
     m_data.append(0x55)
     com.uca.frame_send(data)
     print("Data sent")
-def receive_data(mid):
+def receive_data():
     com.uca.frame_receive()
     if com.uca.frame:
         print("Data received")
