@@ -32,8 +32,8 @@ def mainprog():
     while(True):
     # motor.run_boolean(6,(1,0,0,1))
     # while True:
-        # canPC.send_data(10, [1, 0, 0, 0, 0])
-        canPC.receive_data()
+        canPC.send_data(10, [1, 0, 0, 0, 0])
+        # canPC.receive_data()
     #     movement.move(1000,0,0)
     #     motor.test_degree(2)
     #     motor.run_speed(4, 0)
