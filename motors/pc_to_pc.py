@@ -17,9 +17,6 @@ def receive_data(mid):
     com.uca.frame_receive()
     if com.uca.frame:
         print("Data received")
-        if com.uca.frame[2] == 0x00 + mid:
-            print(com.uca.frame)
-        else:
-            print("Wrong ID")
+        print(com.uca.frame)
     else:
         print("No data received")
