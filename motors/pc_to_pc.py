@@ -13,10 +13,13 @@ def send_data(mid, data):
     m_data.append(0x55)
     com.uca.frame_send(data)
     print("Data sent")
-def receive_data():
+def receive_data(mid):
     com.uca.frame_receive()
     if com.uca.frame:
         print("Data received")
-        print(com.uca.frame)
+        if com.uca.frame[2] == 0x00 + mid:
+            print(com.uca.frame)
+        else:
+            print("Wrong ID")
     else:
         print("No data received")
