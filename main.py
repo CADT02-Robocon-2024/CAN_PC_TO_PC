@@ -30,10 +30,10 @@ def mainprog():
     global reload
     # movement.move(1000,0,0)
     while(True):
-        # canPC.send_data_can(10)
-        can.uca.frame_receive()
-        can.read_from_port
-        print(can.uca.frame)
+        canPC.send_data_can(10)
+        # can.uca.frame_receive()
+        # can.read_from_port
+        # print(can.uca.frame)
 
 
     # motor.run_boolean(6,(1,0,0,1))
