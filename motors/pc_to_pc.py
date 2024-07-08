@@ -1,5 +1,11 @@
 import com.can as com
 
+def converter(data):
+    if data == False:
+        return 0x00
+    elif data == True:
+        return 0x01
+
 def silo_data_convert(data):
     if data == 1:
         return 0x01
@@ -17,7 +23,10 @@ def send_data_can(mid, data):
     m_data.append(0xC8)
     m_data.append(0x00 + mid)
     m_data.append(0x01)
-    m_data.append(silo_data_convert(data))
+    m_data.append(silo_data_convert(data)) # Silo data
+    m_data.append(converter(data)) # Mode data
+    m_data.append(0x00)
+    m_data.append(0x00)
     for i in range(5, 12):
         m_data.append(0x00)
     m_data.append(0x55)

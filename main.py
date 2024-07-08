@@ -4,6 +4,7 @@ import threading
 import motors.rmd_can_v0 as motor
 import motors.movement as movement
 import motors.pc_to_pc as canPC
+import motors.boolean_pc_to_pc as boolPC
 # import motors.monent as mo
 # import cv2
 # new
@@ -30,8 +31,12 @@ def mainprog():
     global reload
     # movement.move(1000,0,0)
     while(True):
+        # cadt02 send boolean data and receive silo data
+        # maker send silo data and receive boolean data
         canPC.send_data_can(10, 1)
         # canPC.receive_data_can()
+        boolPC.receive_data_can()
+        # boolPC.send_data_can(10, 1)
 
 
     # motor.run_boolean(6,(1,0,0,1))
