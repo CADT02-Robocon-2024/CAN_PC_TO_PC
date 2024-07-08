@@ -23,3 +23,8 @@ def send_data_can(mid, data):
     m_data.append(0x55)
     com.uca.frame_send(m_data)
     print("Data sent")
+
+def receive_data_can():
+    frame = com.uca.frame_receive()
+    print("Data received")
+    print(f"{frame}\n")
